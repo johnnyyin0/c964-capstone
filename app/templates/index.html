@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>House Price Prediction</title>
+</head>
+<body>
+    <h2>Predict Housing Price</h2>
+    <form method="post">
+        <label>Bedrooms:</label><br>
+        <input type="number" name="bed" min="1" value="{{ bed }}" required><br><br>
+
+        <label>Bathrooms:</label><br>
+        <input type="number" name="bath" min="1" value="{{ bath }}" required><br><br>
+
+        <label>Zip Code:</label><br>
+        <input type="number" name="zip_code" value="{{ zip_code }}" required><br><br>
+
+        <label>House Size (sq ft):</label><br>
+        <input type="number" name="house_size" value="{{ house_size }}" required><br><br>
+
+        <label>Acre Lot:</label><br>
+        <input type="number" step="0.01" name="acre_lot" value="{{ acre_lot }}" required><br><br>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted Price: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
